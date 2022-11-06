@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, redirect, session
 from flask_db2 import DB2
 import ibm_db
 import ibm_db_dbi
-from sendemail import sendgridmail,sendmail
 from flask_mail import Mail, Message
 
 import os
@@ -10,12 +9,12 @@ import os
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'top-secret!'
-app.config['MAIL_SERVER'] = 'smtp.sendgrid.net'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'apikey'
-app.config['MAIL_PASSWORD'] = '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'
-app.config['MAIL_DEFAULT_SENDER'] = 'tarunvinodh@gmail.com'
+app.config['MAIL_SERVER']='smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = 'akashkumar992002@gmail.com'
+app.config['MAIL_PASSWORD'] = 'veomtnglexlsubhe'
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
 
 app.secret_key = 'a'
