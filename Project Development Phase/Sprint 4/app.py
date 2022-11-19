@@ -13,7 +13,7 @@ import re
 from flask_db2 import DB2
 import ibm_db
 import ibm_db_dbi
-from sendemail import sendgridmail,sendmail
+from sendemail import sendmail
 
 # from gevent.pywsgi import WSGIServer
 import os
