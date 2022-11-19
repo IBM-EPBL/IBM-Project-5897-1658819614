@@ -1,13 +1,7 @@
 # -*- coding: utf-8 -*-
-"""
-Spyder Editor
-
-This is a temporary script file.
-"""
 
 from flask import Flask, render_template, request, redirect, session 
-# from flask_mysqldb import MySQL
-# import MySQLdb.cursors
+
 import re
 
 from flask_db2 import DB2
@@ -15,38 +9,13 @@ import ibm_db
 import ibm_db_dbi
 from sendemail import sendmail
 
-# from gevent.pywsgi import WSGIServer
 import os
 
 
 app = Flask(__name__)
 
 app.secret_key = 'a'
-  
-# app.config['MYSQL_HOST'] = 'remotemysql.com'
-# app.config['MYSQL_USER'] = 'D2DxDUPBii'
-# app.config['MYSQL_PASSWORD'] = 'r8XBO4GsMz'
-# app.config['MYSQL_DB'] = 'D2DxDUPBii'
-"""
-dsn_hostname = "ba99a9e6-d59e-4883-8fc0-d6a8c9f7a08f.c1ogj3sd0tgtu0lqde00.databases.appdomain.cloud"
-dsn_uid = "vmk08423"
-dsn_pwd = "3KfJl6HGDtPdbIWy"
-dsn_driver = "{IBM DB2 ODBC DRIVER}"
-dsn_database = "bludb"
-dsn_port = "31321"
-dsn_protocol = "tcpip"
 
-dsn = (
-    "DRIVER={0};"
-    "DATABASE={1};"
-    "HOSTNAME={2};"
-    "PORT={3};"
-    "PROTOCOL={4};"
-    "UID={5};"
-    "PWD={6};"
-).format(dsn_driver, dsn_database, dsn_hostname, dsn_port, dsn_protocol, dsn_uid, dsn_pwd)
-"""
-# app.config['DB2_DRIVER'] = '{IBM DB2 ODBC DRIVER}'
 app.config['database'] = 'bludb'
 app.config['hostname'] = 'ba99a9e6-d59e-4883-8fc0-d6a8c9f7a08f.c1ogj3sd0tgtu0lqde00.databases.appdomain.cloud'
 app.config['port'] = '31321'
@@ -56,14 +25,14 @@ app.config['pwd'] = '3KfJl6HGDtPdbIWy'
 app.config['security'] = 'SSL'
 try:
     mysql = DB2(app)
-
-    conn_str='database=bludb;hostname=ba99a9e6-d59e-4883-8fc0-d6a8c9f7a08f.c1ogj3sd0tgtu0lqde00.databases.appdomain.cloud;port=31321;protocol=tcpip;\
-            uid=vmk08423;pwd=3KfJl6HGDtPdbIWy;security=SSL'
+    conn_str='database=bludb;hostname=b1bc1829-6f45-4cd4-bef4-10cf081900bf.c1ogj3sd0tgtu0lqde00.databases.appdomain.cloud;port=32304;protocol=tcpip;\
+            uid=scw69712;pwd=P9xTMDBSU1jE3wz2;security=SSL'
     ibm_db_conn = ibm_db.connect(conn_str,'','')
         
     print("Database connected without any error !!")
 except:
     print("IBM DB Connection error   :     " + DB2.conn_errormsg())    
+
 
 # app.config['']
 
