@@ -14,7 +14,7 @@
      spec:
        containers:
        - name: flasknode
-         image: expensetracker
+         image: icr.io/peta/expensetracker
          imagePullPolicy: Always
          ports:
          - containerPort: 5000
