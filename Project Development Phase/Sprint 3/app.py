@@ -162,8 +162,6 @@ def login():
         res = ibm_db.exec_immediate(ibm_db_conn, param)
         dictionary = ibm_db.fetch_assoc(res)
 
-        # sendmail("hello sakthi","sivasakthisairam@gmail.com")
-
         if account:
             session['loggedin'] = True
             session['id'] = dictionary["ID"]
