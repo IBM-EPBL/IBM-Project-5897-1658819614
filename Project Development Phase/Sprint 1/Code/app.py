@@ -4,7 +4,6 @@ from flask import Flask, render_template, request, redirect, session
 from flask_db2 import DB2
 import ibm_db
 import ibm_db_dbi
-from sendemail import sendgridmail,sendmail
 from flask_mail import Mail, Message
 
 import os
@@ -15,22 +14,20 @@ app.config['SECRET_KEY'] = 'top-secret!'
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USERNAME'] = 'akashkumar992002@gmail.com'
-app.config['MAIL_PASSWORD'] = os.environ['MAIL_PASSWORD']
+app.config['MAIL_PASSWORD'] = "****"
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
 
 app.secret_key = 'a'
-  
+try:
     mysql = DB2(app)
-
-    conn_str='database=bludb;hostname=2d46b6b4-cbf6-40eb-bbce-6251e6ba0300.bs2io90l08kqb1od8lcg.databases.appdomain.cloud;port=32328;protocol=tcpip;\
-            uid=lsc91268;pwd=dlWyz6qJK3v27xP6;security=SSL'
+    conn_str='database=bludb;hostname=b1bc1829-6f45-4cd4-bef4-10cf081900bf.c1ogj3sd0tgtu0lqde00.databases.appdomain.cloud;port=32304;protocol=tcpip;\
+            uid=scw69712;pwd=P9xTMDBSU1jE3wz2;security=SSL'
     ibm_db_conn = ibm_db.connect(conn_str,'','')
         
     print("Database connected without any error !!")
 except:
-
     print("IBM DB Connection error   :     " + DB2.conn_errormsg())    
 
 
