@@ -130,7 +130,7 @@ def register():
             # cursor.execute('INSERT INTO register VALUES (NULL, % s, % s, % s)', (username, email,password))
             # mysql.connection.commit()
             msg = 'You have successfully registered !'
-            sendmail("You have Registered for Personal Expense Tracker Application!\n Now don't worry about your Expenses",email)
+            #sendmail("You have Registered for Personal Expense Tracker Application!\n Now don't worry about your Expenses",email)
         return render_template('signup.html', msg = msg)
         
         
@@ -264,7 +264,7 @@ def addexpense():
 
     if total > int(s):
         msg = "Hello " + session['username'] + " , " + "you have crossed the monthly limit of Rs. " + str(s) + "/- !!!" + "\n" + "Thank you, " + "\n" + "Team Personal Expense Tracker."  
-        sendmail(msg,session['email'])
+        #sendmail(msg,session['email'])
     
     return redirect("/display")
 
